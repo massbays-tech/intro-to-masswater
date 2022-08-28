@@ -1,11 +1,142 @@
 ---
-title: "intro-to-masswater"
+title: "Introduction to MassWateR"
+author: 
+   - name: Dr. Marcus Beck, <mbeck@tbep.org>
+institute: "Tampa Bay Estuary Program"
+date: "09/16/2022"
+format:
+  revealjs:
+    logo: figure/logo.png
+    transition: slide
+    footer: "https://massbays-tech.github.io/MassWateR"
+    theme: styles.scss
+    link-external-icon: true
+    linkcolor: "#64C147"
+    link-external-newwindow: true
+execute: 
+  echo: true
 ---
 
-## Quarto
+```{r}
+#| echo: false
+#| include: false
+library(knitr)
+library(MassWateR)
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+# results data
+respth <- system.file('extdata/ExampleResults.xlsx', package = 'MassWateR')
+resdat <- readMWRresults(respth, warn = F, runchk = F)
+
+# dqo accuracy data
+accpth <- system.file('extdata/ExampleDQOAccuracy.xlsx', package = 'MassWateR')
+accdat <- readMWRacc(accpth, runchk = F)
+
+# dqo completeness data
+frecompth <- system.file('extdata/ExampleDQOFrequencyCompleteness.xlsx', package = 'MassWateR')
+frecomdat <- readMWRfrecom(frecompth, runchk = F)
+
+# site metadata
+sitpth <- system.file('extdata/ExampleSites.xlsx', package = 'MassWateR')
+sitdat <- readMWRsites(sitpth, runchk = F)
+```
+
+------------------------------------------------------------------------
+
+## WHAT IS MASSWATER?
+
+::: columns
+::: {.column width="60%"}
+An R package for working with Massachusetts surface water quality data
+
+-   Summarize quality control checks and create reports
+-   Evaluate outliers
+-   Plot trends by site, date
+-   Create maps
+-   Format results for upload to WQX
+:::
+
+::: {.column width="40%"}
+![](figure/logo.png){fig-align="center" width="250px"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## WHAT IS MASSWATER?
+
+A workflow to solve your data woes!
+
+![](figure/workflow.PNG){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## WEBSITE
+
+Installation instructions, function help files, vignettes!
+
+![](figure/website.PNG){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## REQUIRED DATA
+
+-   Water quality data results file
+-   Data quality objective files (accuracy, frequency, completeness)
+-   Site metadata (location, site groups, etc.)
+
+::: callout-note
+## Templates
+
+All data must be formatted using available templates, which you are already have! The package includes automated data checks to verify the correct format.
+:::
+
+------------------------------------------------------------------------
+
+## QC REVIEW
 
 ```{r}
-1 + 1
+#| eval: false
+qcMWRreview(res = resdat, acc = accdat, frecom = frecomdat, output_dir = getwd())
+```
+
+![](figure/qcreport.PNG){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## OUTLIER REVIEW
+
+```{r}
+anlzMWRoutlier(res = resdat, param = "DO", acc = accdat, group = "month")
+```
+
+------------------------------------------------------------------------
+
+## SEASONAL ANALYSIS
+
+```{r}
+anlzMWRseason(res = resdat, param = "DO", acc = accdat, thresh = "fresh", group = "month", type = "jitterbar")
+```
+
+------------------------------------------------------------------------
+
+## TIME-SERIES ANALYSIS
+
+```{r}
+anlzMWRdate(res = resdat, param = "DO", acc = accdat, thresh = "fresh", group = "site", site = c("ABT-026", "ABT-077"))
+```
+
+------------------------------------------------------------------------
+
+## SITE ANALYSIS
+
+```{r}
+anlzMWRsite(res = resdat, param = "DO", acc = accdat, thresh = "fresh", type = "bar", confint = T)
+```
+
+------------------------------------------------------------------------
+
+## MAP ANALYSIS
+
+```{r}
+anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
 ```

@@ -1,0 +1,62 @@
+
+/*-- scss:rules --*/
+
+/* header styles */
+
+.reveal h1 {
+  font-weight: 700;
+  color: #00A4CF;
+  letter-spacing: -0.05em;
+}
+.reveal h2 {
+  font-weight: 300;
+  color: #64C147;
+  letter-spacing: -0.05em;
+}
+.reveal h3 {
+  font-weight: 300;
+  color: #00806E;
+  letter-spacing: -0.05em;
+}
+.reveal h4 {
+  font-weight: 300;
+  color: #958984;
+}
+.reveal h5 {
+  font-weight: 300;
+  color: #958984;
+}
+.reveal .slide a {
+  color: #00806E;
+  text-align: center;
+}
+.reveal p {
+  font-weight: 300;
+  color: #958984;
+  font-style: italic;
+  letter-spacing: -0.05em;
+}
+
+.reveal ul {
+  list-style: none; /* Remove default bullets */
+}
+
+.reveal ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #958984; /* Change the color */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.reveal ol {  
+  font-weight: 300;
+  font-size: 36px; /* roughly h3 font size */
+  color: #958984; /* Change the color */
+}
+
+.reveal ul {  
+  font-weight: 300;
+  font-size: 36px; /* roughly h3 font size */
+  color: #958984; /* Change the color */
+}
