@@ -66,7 +66,7 @@ An R package for working with Massachusetts surface water quality data
 
 A workflow to solve your data woes!
 
-![](figure/workflow.png){fig-align="center"}
+![](figure/workflow.PNG){fig-align="center"}
 
 ------------------------------------------------------------------------
 
