@@ -424,9 +424,9 @@
 <section id="required-data" class="slide level2">
 <h2>REQUIRED DATA</h2>
 <ul>
-<li>Water quality data results file</li>
-<li>Data quality objective files (accuracy, frequency, completeness)</li>
-<li>Site metadata (location, site groups, etc.)</li>
+<li><a href="ExampleResults.xlsx" style="color: #64C147">Water quality data results file</a></li>
+<li>Data quality objective files (<a href="supp/ExampleDQOAccuracy.xlsx" style="color: #64C147">accuracy</a>, <a href="supp/ExampleDQOFrequencyCompleteness.xlsx" style="color: #64C147">frequency, completeness</a>)</li>
+<li><a href="supp/ExampleSites.xlsx" style="color: #64C147">Site metadata</a> (location, site groups, etc.)</li>
 </ul>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -448,7 +448,7 @@
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">qcMWRreview</span>(<span class="at">res =</span> resdat, <span class="at">acc =</span> accdat, <span class="at">frecom =</span> frecomdat, <span class="at">output_dir =</span> <span class="fu">getwd</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-<img data-src="figure/qcreport.png" width="579" class="r-stretch quarto-figure-center"><p><a href="qcreview.pdf" style="color: #64C147; text-align: center;">view report</a></p>
+<img data-src="figure/qcreport.png" width="579" class="r-stretch quarto-figure-center"><p><a href="supp/qcreview.pdf" style="color: #64C147">view report</a></p>
 </section>
 <section id="outlier-review" class="slide level2">
 <h2>OUTLIER REVIEW</h2>
@@ -481,8 +481,15 @@
 <section id="map-analysis" class="slide level2">
 <h2>MAP ANALYSIS</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">anlzMWRmap</span>(<span class="at">res =</span> resdat, <span class="at">param =</span> <span class="st">"DO"</span>, <span class="at">acc =</span> accdat, <span class="at">sit =</span> sitdat, <span class="at">addwater =</span> <span class="st">"nhd"</span>, <span class="at">warn =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="wqx-formatting---coming-soon" class="slide level2">
+<h2>WQX FORMATTING - COMING SOON!</h2>
+<ul>
+<li>Options will be included for exporting water quality data files in a format for upload to WQX</li>
+</ul>
 
 <img src="figure/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://massbays-tech.github.io/MassWateR" class="uri">https://massbays-tech.github.io/MassWateR</a></p>

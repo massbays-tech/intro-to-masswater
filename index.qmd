@@ -80,9 +80,9 @@ Installation instructions, function help files, vignettes!
 
 ## REQUIRED DATA
 
--   Water quality data results file
--   Data quality objective files (accuracy, frequency, completeness)
--   Site metadata (location, site groups, etc.)
+-   [Water quality data results file](ExampleResults.xlsx){style="color: #64C147"}
+-   Data quality objective files ([accuracy](supp/ExampleDQOAccuracy.xlsx){style="color: #64C147"}, [frequency, completeness](supp/ExampleDQOFrequencyCompleteness.xlsx){style="color: #64C147"})
+-   [Site metadata](supp/ExampleSites.xlsx){style="color: #64C147"} (location, site groups, etc.)
 
 ::: callout-note
 ## Templates
@@ -101,7 +101,7 @@ qcMWRreview(res = resdat, acc = accdat, frecom = frecomdat, output_dir = getwd()
 
 ![](figure/qcreport.png){fig-align="center" fig-height="80%" width="579"}
 
-[view report](qcreview.pdf){style="color: #64C147; text-align: center;"}
+[view report](supp/qcreview.pdf){style="color: #64C147"}
 
 ------------------------------------------------------------------------
 
@@ -140,5 +140,11 @@ anlzMWRsite(res = resdat, param = "DO", acc = accdat, thresh = "fresh", type = "
 ## MAP ANALYSIS
 
 ```{r}
-# anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
+anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
 ```
+
+------------------------------------------------------------------------
+
+## WQX FORMATTING - COMING SOON!
+
+-   Options will be included for exporting water quality data files in a format for upload to WQX
