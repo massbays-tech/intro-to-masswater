@@ -80,7 +80,7 @@ Installation instructions, function help files, vignettes!
 
 ## REQUIRED DATA
 
--   [Water quality data results file](ExampleResults.xlsx){style="color: #64C147"}
+-   [Water quality data results file](supp/ExampleResults.xlsx){style="color: #64C147"}
 -   Data quality objective files ([accuracy](supp/ExampleDQOAccuracy.xlsx){style="color: #64C147"}, [frequency, completeness](supp/ExampleDQOFrequencyCompleteness.xlsx){style="color: #64C147"})
 -   [Site metadata](supp/ExampleSites.xlsx){style="color: #64C147"} (location, site groups, etc.)
 
