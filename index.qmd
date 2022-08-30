@@ -8,7 +8,7 @@ format:
   revealjs:
     logo: figure/logo.png
     transition: slide
-    footer: "https://massbays-tech.github.io/MassWateR"
+    footer: "<https://massbays-tech.github.io/MassWateR>"
     theme: styles.scss
     link-external-icon: true
     linkcolor: "#64C147"
@@ -99,7 +99,9 @@ All data must be formatted using available templates, which you are already have
 qcMWRreview(res = resdat, acc = accdat, frecom = frecomdat, output_dir = getwd())
 ```
 
-![](figure/qcreport.png){fig-align="center"}
+![](figure/qcreport.png){fig-align="center" fig-height="80%" width="579"}
+
+[view report](qcreview.pdf){style="color: #64C147; text-align: center;"}
 
 ------------------------------------------------------------------------
 
@@ -138,5 +140,5 @@ anlzMWRsite(res = resdat, param = "DO", acc = accdat, thresh = "fresh", type = "
 ## MAP ANALYSIS
 
 ```{r}
-anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
+# anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
 ```
