@@ -80,9 +80,9 @@ Installation instructions, function help files, vignettes!
 
 ## REQUIRED DATA
 
--   [Water quality data results file](supp/ExampleResults.xlsx){style="color: #64C147"}
--   Data quality objective files ([accuracy](supp/ExampleDQOAccuracy.xlsx){style="color: #64C147"}, [frequency, completeness](supp/ExampleDQOFrequencyCompleteness.xlsx){style="color: #64C147"})
--   [Site metadata](supp/ExampleSites.xlsx){style="color: #64C147"} (location, site groups, etc.)
+-   [Water quality data results file](supp/BetaResults_9-8-22.xlsx){style="color: #64C147"}
+-   Data quality objective files ([accuracy](supp/BetaDQOAccuracy_9-2-22.xlsx){style="color: #64C147"}, [frequency, completeness](supp/BetaDQOFreqComp_9-2-22.xlsx){style="color: #64C147"})
+-   [Site metadata](supp/BetaSites_9-2-22.xlsx){style="color: #64C147"} (location, site groups, etc.)
 
 ::: callout-note
 ## Templates
