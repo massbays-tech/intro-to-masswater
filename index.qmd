@@ -157,6 +157,6 @@ anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "m
 tabMWRwqx(res = resdat, acc = accdat, sit = sitdat, wqx = wqxdat, output_dir = getwd())
 ```
 
-![](figure/wqxtab.png){fig-align="center" fig-height="80%"}
+![](figure/wqxtab.PNG){fig-align="center" fig-height="80%"}
 
 [view output](supp/wqxtab.xlsx){style="color: #64C147"}
