@@ -38,6 +38,10 @@ frecomdat <- readMWRfrecom(frecompth, runchk = F)
 # site metadata
 sitpth <- system.file('extdata/ExampleSites.xlsx', package = 'MassWateR')
 sitdat <- readMWRsites(sitpth, runchk = F)
+
+# wqx metadata
+wqxpth <- system.file('extdata/ExampleWQX.xlsx', package = 'MassWateR')
+wqxdat <- readMWRwqx(wqxpth)
 ```
 
 ------------------------------------------------------------------------
@@ -80,9 +84,10 @@ Installation instructions, function help files, vignettes!
 
 ## REQUIRED DATA
 
--   [Water quality data results file](supp/BetaResults_9-8-22.xlsx){style="color: #64C147"}
--   Data quality objective files ([accuracy](supp/BetaDQOAccuracy_9-2-22.xlsx){style="color: #64C147"}, [frequency, completeness](supp/BetaDQOFreqComp_9-2-22.xlsx){style="color: #64C147"})
--   [Site metadata](supp/BetaSites_9-2-22.xlsx){style="color: #64C147"} (location, site groups, etc.)
+-   [Water quality data results file](https://massbays-tech.github.io/MassWateR/MassWateR_Results_Template.xlsx){style="color: #64C147"}
+-   Data quality objective files ([accuracy](https://massbays-tech.github.io/MassWateR/MassWateR_DQOAccuracy_Template.xlsx){style="color: #64C147"}, [frequency, completeness](https://massbays-tech.github.io/MassWateR/MassWateR_DQOFreqComp_Template.xlsx){style="color: #64C147"})
+-   [Site metadata](https://massbays-tech.github.io/MassWateR/MassWateR_Sites_Template.xlsx){style="color: #64C147"} (location, site groups, etc.)
+-   [WQX metadata](https://massbays-tech.github.io/MassWateR/MassWateR_WQXMeta_Template.xlsx){style="color: #64C147"}
 
 ::: callout-note
 ## Templates
@@ -140,11 +145,18 @@ anlzMWRsite(res = resdat, param = "DO", acc = accdat, thresh = "fresh", type = "
 ## MAP ANALYSIS
 
 ```{r}
-anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "nhd", warn = F)
+anlzMWRmap(res = resdat, param = "DO", acc = accdat, sit = sitdat, addwater = "medium", warn = F)
 ```
 
 ------------------------------------------------------------------------
 
-## WQX FORMATTING - COMING SOON!
+## WQX FORMATTING
 
--   Options will be included for exporting water quality data files in a format for upload to WQX
+```{r}
+#| eval: false
+tabMWRwqx(res = resdat, acc = accdat, sit = sitdat, wqx = wqxdat, output_dir = getwd())
+```
+
+![](figure/wqxtab.png){fig-align="center" fig-height="80%"}
+
+[view output](supp/wqxtab.xlsx){style="color: #64C147"}

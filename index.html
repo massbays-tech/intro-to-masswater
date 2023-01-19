@@ -7,10 +7,9 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.2.258">
 
   <meta name="author" content="Dr.&nbsp;Marcus Beck, mbeck@tbep.org">
-  <meta name="dcterms.date" content="2022-09-16">
   <title>Introduction to MassWateR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -383,13 +387,22 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to MassWateR</h1>
-  <p class="author">Dr.&nbsp;Marcus Beck, <a href="mailto:mbeck@tbep.org" class="email">mbeck@tbep.org</a></p>
-  <p class="institute">Tampa Bay Estuary Program</p>
-  <p class="date">09/16/2022</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Marcus Beck, <a href="mailto:mbeck@tbep.org" class="email">mbeck@tbep.org</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            Tampa Bay Estuary Program
+          </p>
+    </div>
+</div>
+
+  <p class="date">9/16/22</p>
+</section>
 <section id="what-is-masswater" class="slide level2">
 <h2>WHAT IS MASSWATER?</h2>
 <div class="columns">
@@ -424,9 +437,10 @@
 <section id="required-data" class="slide level2">
 <h2>REQUIRED DATA</h2>
 <ul>
-<li><a href="supp/BetaResults_9-8-22.xlsx" style="color: #64C147">Water quality data results file</a></li>
-<li>Data quality objective files (<a href="supp/BetaDQOAccuracy_9-2-22.xlsx" style="color: #64C147">accuracy</a>, <a href="supp/BetaDQOFreqComp_9-2-22.xlsx" style="color: #64C147">frequency, completeness</a>)</li>
-<li><a href="supp/BetaSites_9-2-22.xlsx" style="color: #64C147">Site metadata</a> (location, site groups, etc.)</li>
+<li><a href="https://massbays-tech.github.io/MassWateR/MassWateR_Results_Template.xlsx" style="color: #64C147">Water quality data results file</a></li>
+<li>Data quality objective files (<a href="https://massbays-tech.github.io/MassWateR/MassWateR_DQOAccuracy_Template.xlsx" style="color: #64C147">accuracy</a>, <a href="https://massbays-tech.github.io/MassWateR/MassWateR_DQOFreqComp_Template.xlsx" style="color: #64C147">frequency, completeness</a>)</li>
+<li><a href="https://massbays-tech.github.io/MassWateR/MassWateR_Sites_Template.xlsx" style="color: #64C147">Site metadata</a> (location, site groups, etc.)</li>
+<li><a href="https://massbays-tech.github.io/MassWateR/MassWateR_WQXMeta_Template.xlsx" style="color: #64C147">WQX metadata</a></li>
 </ul>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -481,17 +495,23 @@
 <section id="map-analysis" class="slide level2">
 <h2>MAP ANALYSIS</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">anlzMWRmap</span>(<span class="at">res =</span> resdat, <span class="at">param =</span> <span class="st">"DO"</span>, <span class="at">acc =</span> accdat, <span class="at">sit =</span> sitdat, <span class="at">addwater =</span> <span class="st">"nhd"</span>, <span class="at">warn =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">anlzMWRmap</span>(<span class="at">res =</span> resdat, <span class="at">param =</span> <span class="st">"DO"</span>, <span class="at">acc =</span> accdat, <span class="at">sit =</span> sitdat, <span class="at">addwater =</span> <span class="st">"medium"</span>, <span class="at">warn =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section id="wqx-formatting---coming-soon" class="slide level2">
-<h2>WQX FORMATTING - COMING SOON!</h2>
-<ul>
-<li>Options will be included for exporting water quality data files in a format for upload to WQX</li>
-</ul>
-
-<img src="figure/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<section id="wqx-formatting" class="slide level2">
+<h2>WQX FORMATTING</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">tabMWRwqx</span>(<span class="at">res =</span> resdat, <span class="at">acc =</span> accdat, <span class="at">sit =</span> sitdat, <span class="at">wqx =</span> wqxdat, <span class="at">output_dir =</span> <span class="fu">getwd</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figure/wqxtab.png"></p>
+</figure>
+</div>
+<p><a href="supp/wqxtab.xlsx" style="color: #64C147">view output</a></p>
+<p><img src="figure/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://massbays-tech.github.io/MassWateR" class="uri">https://massbays-tech.github.io/MassWateR</a></p>
 </div>
 </section>
@@ -712,12 +732,15 @@
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -728,13 +751,6 @@
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -786,7 +802,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -816,31 +849,50 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -848,7 +900,7 @@
             return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
