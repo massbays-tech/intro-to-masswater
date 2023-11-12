@@ -95,21 +95,21 @@ qcMWRreview(fset = fsetls, output_dir = getwd())
 ### View Summary of Seasonal Distributions
 
 ```{r}
-# View a summary of seasonal distributions of DO for "fresh" water
+# View a summary of seasonal distributions of DO
 anlzMWRseason(fset = fsetls, param = "DO", thresh = "fresh")
 ```
 
 ### View Time Series
 
 ```{r}
-# View a time series of DO for specific sites in "fresh" water
+# View a time series of DO for specific sites
 anlzMWRdate(fset = fsetls, param = "DO", thresh = "fresh", site = c("ABT-026", "ABT-077"))
 ```
 
 ### View Summary of Site Results
 
 ```{r}
-# View a summary of site results for DO in "fresh" water
+# View a summary of site results for DO
 anlzMWRsite(fset = fsetls, param = "DO", thresh = "fresh")
 ```
 
